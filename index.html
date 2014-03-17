@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+    <title>Chat application</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes">
+    <!--JQuery-->
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.css" />-->
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <!--<script src="http://code.jquery.com/jquery-s2.0.3.js"></script>-->
+    <script src="res/js/jquery.mobile-1.4.2.js"></script>
+    <!--Templating-->
+    <script type="text/javascript" src="res/js/dust-full-1.1.1.js"></script>
+    <script type="text/javascript" src="res/js/dust-helpers-1.1.0.js"></script>
+    <!--<script type="text/javascript" src="res/js/jquery.xdomainrequest.min.js"></script>-->
+
+    <link rel="shortcut icon" href="res/img/favicon.png" type="image/gif">
+    <link rel="stylesheet" type="text/css" href="res/css/default.css">
+
+    <style type="text/css" charset="utf-8">
+    </style>
+</head>
+<body>
+<div data-role="page" id="page_main_chat" data-href="">
+    <script src="res/js/script.js"></script>
+    <div data-role="content" id="chat-pane">
+        <ul id="chat-tabs">
+            <!--<li style="width: auto; overflow: visible;" class="roomtype-groupchat active" data-roomjid="candy_demo@conference.swissjabber.ch" data-roomtype="groupchat">-->
+            <!--<a href="#" class="label">candy_demo</a>-->
+            <!--<a href="#" class="transition"></a>-->
+            <!--<a href="#" class="close">×</a><small style="display: none;" class="unread"></small>-->
+            <!--</li>-->
+            <!--<li style="width: auto; overflow: visible;" class="roomtype-chat online" data-roomjid="candy_demo@conference.swissjabber.ch/aaaa" data-roomtype="chat">-->
+            <!--<a href="#" class="label">@aaaa</a>-->
+            <!--<a href="#" class="transition"></a>-->
+            <!--<a href="#" class="close">×</a>-->
+            <!--<small style="display: none;" class="unread"></small>-->
+            <!--</li>-->
+        </ul>
+        <ul style="display: block;" id="chat-toolbar">
+            <!--<li id="emoticons-icon" data-tooltip="Emoticons"></li>-->
+            <!--<li id="chat-sound-control" class="checked" data-tooltip="Play sound for new private messages">-->
+            <!--<script type="text/javascript">var audioplayerListener = new Object(); audioplayerListener.onInit = function() { };</script>-->
+            <!--<object id="chat-sound-player" type="application/x-shockwave-flash" data="res/audioplayer.swf" height="0" width="0">-->
+            <!--<param name="movie" value="res/audioplayer.swf"><param name="AllowScriptAccess" value="always"><param name="FlashVars" value="listener=audioplayerListener&amp;mp3=res/notify.mp3">-->
+            <!--</object>-->
+            <!--</li>-->
+            <!--<li id="chat-autoscroll-control" class="checked" data-tooltip="Autoscroll"></li>-->
+            <!--<li class="checked" id="chat-statusmessage-control" data-tooltip="Display status messages"></li>-->
+            <!--<li style="display: none;" class="context" data-tooltip="Room Administration"></li>-->
+
+            <!--DUST CU NUMARUL DE UTILIZATORI DIN CAMERA-->
+        </ul>
+        <div id="chat-rooms" class="rooms">
+            <div data-userjid="candy_demo@conference.swissjabber.ch/oooo" style="display: block;" class="room-pane roomtype-groupchat" id="chat-room-cf670471ce376a4f8bd85b8d78fd386b" data-roomjid="candy_demo@conference.swissjabber.ch" data-roomtype="groupchat">
+                <div class="roster-pane">
+                    <!--AICI BAGAM UN DUST CU UTILIZATORII-->
+                </div>
+                <div class="message-pane-wrapper">
+                    <ul data-role="listview" class="message-pane">
+                        <!--DUST CU RANDAREA MESAJELOR-->
+                    </ul>
+                </div>
+                <div class="message-form-wrapper">
+                    <form method="post" onsubmit="return false" class="message-form">
+                        <input id="user_message" name="message" class="field" aria-label="Message Form Text Field" autocomplete="off" maxlength="1000" type="text"/>
+                        <input id="submit_button" class="submit" name="submit" value="Send" type="submit"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div style="display: none;" id="context-menu"><i class="arrow arrow-top"></i><ul></ul><i class="arrow arrow-bottom"></i></div>
+        <div class="right-bottom" style="left: 0px; top: 0px; display: none;" id="tooltip"><i class="arrow arrow-top"></i><div>Room Occupants</div><i class="arrow arrow-bottom"></i></div>
+    </div>
+    <div style="display: none;" id="chat-modal"><a style="display: none;" id="admin-message-cancel" class="close" href="#">×</a><span id="chat-modal-body"></span><img style="display: none;" src="res/img/modal-spinner.gif" id="chat-modal-spinner"></div>
+    <div style="display: none;" id="chat-modal-overlay"></div>
+</div>
+
+
+</body>
